@@ -1,0 +1,9 @@
+BulkPayment
+GetAccountEnquiry
+GetActiveBanks
+GetAddAccount
+PaymentStatus
+PaymentStatusBulk
+RemitaInterbankService
+SinglePayment
+ValidateAccountOTP

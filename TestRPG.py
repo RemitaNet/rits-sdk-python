@@ -1,23 +1,6 @@
-from BulkPayment.BulkPayment import BulkPayment
-from Credentials import Credentials
-from EncryptionUtil import EncryptionConfig
-from GetAccountEnquiry.AccountEnquiry import AccountEnquiry
-from GetAccountEnquiry.AccountEnquiryPayload import AccountEnquiryPayload
-from GetAddAccount.AddAccount import AddAccount
-from GetAddAccount.AddAccountPayload import AddAccountPayload
-from GetActiveBanks.GetActiveBanks import GetActiveBanks
-from GetActiveBanks.GetActiveBanksPayload import GetActiveBanksPayload
-from PaymentStatus.PaymentStatus import PaymentStatus
-from PaymentStatus.PaymentStatusPayload import PaymentStatusPayload
-from PaymentStatusBulk.PaymentStatusBulk import PaymentStatusBulk
+from RemitaInterbankService.Credentials import Credentials
 from PaymentStatusBulk.PaymentStatusBulkPayload import PaymentStatusBulkPayload
-from RemitaRITs import RemitaRITs
-from SinglePayment.SinglePayment import SinglePayment
-from SinglePayment.SinglePaymentPayload import SinglePaymentPayload
-from ValidateAccountOTP.ValidateAccountOTP import ValidateAccountOTP
-from ValidateAccountOTP.ValidateAccountOTPPayload import ValidateAccountOTPPayload
-from BulkPayment.BulkPaymentPayload import BulkPaymentPayload, PaymentDetail
-from BulkPayment.BulkPaymentPayload import BulkPaymentInfo
+from RemitaInterbankService.RemitaRITs import RemitaRITs
 
 
 class TestRPG(object):
@@ -33,7 +16,7 @@ class TestRPG(object):
     credentials.connection_timeout = 30000
 
     payload = PaymentStatusBulkPayload()
-    payload.request_id = "1567529455332544004653454505"
+    payload.request_id = "156752945533254400465345450533"
     payload.batch_ref = "418087"
 
     remita_rits_service = RemitaRITs(credentials=credentials)

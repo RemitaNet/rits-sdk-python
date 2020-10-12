@@ -1,5 +1,5 @@
 from BulkPayment.BulkPayment import BulkPayment
-from Credentials import Credentials
+from RemitaInterbankService.Credentials import Credentials
 from GetAccountEnquiry.AccountEnquiry import AccountEnquiry
 from GetActiveBanks.GetActiveBanks import GetActiveBanks
 from GetAddAccount.AddAccount import AddAccount
