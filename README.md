@@ -1,42 +1,52 @@
 # Remita Interbank Transfer Service (RITs) Python SDK
 
-Python SDK for Remita Interbank Transfer Service simple APIs
+---
+- [Overview](#Overview)
+- [Installation](#Installation)
+- [Usage](#Usage)
+- [Contributing](#Contributing)
+- [License](License)
 
-## Package
-To install the remita-rits-sdk-python package, run the following command.
+---
+
+## Overview
+Python SDK for Remita Interbank Transfer Service simple APIs.
+
+---
+
+## Installation
+To install the remita-rits-sdk-python package, run the following command:
 
 ```
 pip install remita-rits
 ```
 
-## Requirements
+### Requirements
 - Python 3.4 or later
 
-## Dependencies
+### Dependencies
 - pycryptodome package
 - requests package
 
-## Prerequisites
+### Prerequisites
 The workflow to getting started on RITs is as follows:
 
 **Register a profile on Remita**: You can visit Remita to sign-up if you are not already registered as a merchant/biller on the platform.
 
 **Receive the Remita credentials that certify you as a Biller**: Remita will send you your merchant ID and an API Key necessary to secure your handshake to the Remita platform.
 
-## Configuration
+### Configuration
 All merchant credentials needed to use RITs are being setup by instantiating the Credential Class and set the properties in this class accordingly. Properties such as MerchantId, ApiKey, ApiToken, Key, Iv and the Environment needs to be set.
 
 **Note**: Environment can either be TEST or LIVE, each of this environment has it respective Credential. Ensure you set the right credentials. By default Environment is TEST
 
+---
 
+## Usage
 
-## Methods
-
-#### Adding Account(s) To Your Profile
+### Adding Account(s) To Your Profile
 
 Adding an account to your merchant profile on the RITs is a dual process.
-
-
 
 The first step is to **AddAccount**, 
 
@@ -98,7 +108,7 @@ class TestRPG(object):
 ```
 Successful authentication through the bank links the designated account to the corresponding merchant profile on the RITs platform.
 
-#### Payments
+### Payments
 Payments on the RITs platform can only be made from Remita-identifiable accounts. This means that before an account can be debited on the RITs, it must be linked to a profile. Merchants may process payments via the following SDK methods on the platform:
 
 **Single Payment Request**: This charges/debits a merchant’s account with a specified amount to credit a designated beneficiary account. Fields(payload) to set include:
@@ -195,7 +205,7 @@ class TestRPG(object):
     bulk_payment_response = remita_rits_service.bulk_payment(payload=bulk_payload)
 ```
 
-#### Payment Request Status
+### Payment Request Status
 The payment request status method essentially retrieves the status of a previous payment request(Single payment and Bulk payment) using its transaction reference.
 
 **Single Payment Request Status:**
@@ -250,7 +260,7 @@ class TestRPG(object):
     payment_status_bulk_response = remita_rits_service.payment_status_bulk(payload=payload)
 ```
 
-#### Account Enquiry
+### Account Enquiry
 
 Account Enquiry Request finds all available information on a specific account. Required fields(Payloads) are as follows;
 
@@ -280,7 +290,7 @@ class TestRPG(object):
     account_enquiry_response = remita_rits_service.account_enquiry(payload=payload)
 ```
 
-#### Bank Enquiry
+### Bank Enquiry
 This method lists the banks that are active on the RITs platform. required fields(Payloads) are as follow; 
 
 - **requestId**: This uniquely identifies the request 
@@ -305,9 +315,28 @@ class TestRPG(object):
     get_active_banks_response = remita_rits_service.get_active_banks(payload=payload)
 ```
 
-## Useful links
-* Join our Slack Developer/Support channel at http://bit.ly/RemitaDevSlack
+
+### Useful links
+Join our Slack Developer/Support channel on [slack.](http://bit.ly/RemitaDevSlack)
     
-## Support
-- For all other support needs, support@remita.net
-- To contribute to this repo, create an issue on what you intend to fix or update, make a PR and team will look into it and merge.
+### Support
+For all other support needs, support@remita.net
+
+---
+
+## Contributing
+To contribute to this repo, follow these guidelines for creating issues, proposing new features, and submitting pull requests:
+
+1. Fork the repository.
+2. Create a new branch: `git checkout -b "feature-name"`
+3. Make your changes and commit: `git commit -m "added some new features"`
+4. Push your changes: `git push origin feature-name`
+5. Submit a Pull Request (PR).
+
+Thank you!
+
+---
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
